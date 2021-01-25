@@ -1,4 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTag } from '@fortawesome/free-solid-svg-icons'
+
 import Container from 'components/Container'
 import PostsList from 'components/PostsList'
 import { getSortedPostsDataByTag, getAllTags } from 'lib/tags'
@@ -12,6 +15,9 @@ type Props = {
 export default function PostsByTag({ tag, posts }: Props) {
   return (
     <Container>
+      <h1 className="text-4xl font-bold mb-5">
+        <FontAwesomeIcon icon={faTag} /> {tag}
+      </h1>
       <PostsList postsData={posts} />
     </Container>
   )
