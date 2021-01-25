@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/**
+ * Custom styles
+ */
+a {
+  @apply text-blue-600 hover:text-blue-800;
+}
+
+/* Prevent katex frac line from getting gray in tailwind */
+.frac-line {
+  border-color: black;
+}
