@@ -35,5 +35,5 @@ function getExcerptFromPost(post: PostData) {
   for (let i = 0; i < parapraphs.length; ++i) {
     excerpt += parapraphs[i].textContent
   }
-  return excerpt.slice(0, 300)
+  return excerpt.slice(0, 200)
 }
