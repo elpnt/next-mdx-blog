@@ -1,19 +1,14 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import hydrate from 'next-mdx-remote/hydrate'
-import { MDXProvider } from '@mdx-js/react'
-import { MdxRemote } from 'next-mdx-remote/types'
 import { getAllPosts, getPostDataBySlug } from 'lib/posts'
 import PostLayout from 'components/PostLayout'
-import { FrontMatter } from 'types'
+import { PostData } from 'types'
 
 type Props = {
-  frontmatter: FrontMatter
-  mdxSource: MdxRemote.Source
+  postData: PostData
 }
 
-export default function Post({ frontmatter, mdxSource }: Props) {
-  const content = hydrate(mdxSource)
-  return <PostLayout frontmatter={frontmatter}>{content}</PostLayout>
+export default function Post({ postData }: Props) {
+  return <PostLayout postData={postData} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -33,8 +28,10 @@ export const getStaticProps: GetStaticProps = async ({
 }: {
   params: { slug: string }
 }) => {
-  const post = await getPostDataBySlug(params.slug)
+  const postData = await getPostDataBySlug(params.slug)
   return {
-    props: post,
+    props: {
+      postData,
+    },
   }
 }
