@@ -20,7 +20,7 @@ export default function TagsList({ tagsData }: { tagsData: Props }) {
             <Link href={`/tags/${tag}`}>
               <a>
                 <FontAwesomeIcon icon={faTags} className="mr-1" />
-                {tag}({numberOfPosts})
+                {tag} ({numberOfPosts})
               </a>
             </Link>
           </li>
