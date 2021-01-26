@@ -40,6 +40,9 @@ module.exports = {
               borderRadius: '0.25em',
               padding: '0.25em',
             },
+            pre: {
+              borderWidth: 'thin',
+            },
           },
         },
       }),
