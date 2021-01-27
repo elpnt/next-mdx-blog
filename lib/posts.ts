@@ -19,7 +19,7 @@ export async function getPostDataBySlug(slug: string): Promise<PostData> {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   const { data, content } = matter(fileContents)
-  const { title, date, tags } = data
+  const { title, date, tags, image } = data
   const mdxSource = await renderToString(content, {
     mdxOptions: {
       remarkPlugins: [require('remark-math')],
@@ -33,6 +33,7 @@ export async function getPostDataBySlug(slug: string): Promise<PostData> {
       title,
       date: format(date, dateFormat),
       tags,
+      image: image || null,
     },
     mdxSource,
   }

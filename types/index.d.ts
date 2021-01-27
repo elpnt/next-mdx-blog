@@ -4,6 +4,7 @@ export interface FrontMatter {
   title: string
   date: string
   tags: string[]
+  image: string
 }
 
 export interface PostData {

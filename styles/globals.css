@@ -5,6 +5,14 @@
 /**
  * Custom styles
  */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: optional;
+  src: url(/fonts/Inter.var.woff2) format("woff2");
+}
+
 a {
   @apply text-blue-600 hover:text-blue-800;
 }

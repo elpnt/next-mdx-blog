@@ -1,14 +1,14 @@
 import Head from 'next/head'
-import { MdxRemote } from 'next-mdx-remote/types'
 import { getExcerptFromPost } from 'lib/utils'
-import { FrontMatter, PostData } from 'types'
+import { PostData } from 'types'
 
 type Props = {
   postData: PostData
 }
 
 export default function SEO({ postData }: Props) {
-  const { title, date } = postData.frontmatter
+  const { title, image } = postData.frontmatter
+  const og_image = image || `https://particles-og-image.vercel.app/${title}.png`
   const description = getExcerptFromPost(postData)
   return (
     <Head>
@@ -19,7 +19,11 @@ export default function SEO({ postData }: Props) {
       <meta property="og:site_name" content="Next.js + TypeScript Blog" />
       <meta property="og:description" content={`${description}`} />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content="hoge" />
+      <meta property="og:image" content={og_image} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={og_image} />
     </Head>
   )
 }

@@ -1,8 +1,13 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./pages/**/*.{js,jsx,ts,tsx}', './components/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'media',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -28,12 +33,14 @@ module.exports = {
             'li.task-list-item': {
               height: '2rem',
               paddingLeft: '0',
+              display: 'flex',
+              alignItems: 'center',
             },
             'li.task-list-item::before': {
               display: 'none',
             },
             input: {
-              marginRight: '0.7em',
+              marginRight: '0.5em',
             },
             code: {
               backgroundColor: theme('colors.gray.100'),

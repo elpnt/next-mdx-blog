@@ -18,7 +18,7 @@ export default function TagsList({ tagsData }: { tagsData: Props }) {
         {tagsData.map(({ tag, numberOfPosts }) => (
           <li key={tag}>
             <Link href={`/tags/${tag}`}>
-              <a>
+              <a className="text-sm md:text-base">
                 <FontAwesomeIcon icon={faTags} className="mr-1" />
                 {tag} ({numberOfPosts})
               </a>
