@@ -12,18 +12,9 @@ export default function PostHeader({ postData }: Props) {
   console.log(image)
   return (
     <header className="mb-10 w-full">
-      <Date dateString={date} />
       <h1 className="text-3xl md:text-5xl font-bold my-1 md:my-2">{title}</h1>
+      <Date dateString={date} />
       <Tags tags={tags} />
-      {image ? (
-        <Image
-          src={`/images/${image}`}
-          width={1200}
-          height={600}
-          layout="responsive"
-          objectFit="cover"
-        />
-      ) : null}
     </header>
   )
 }

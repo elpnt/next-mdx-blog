@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTags } from '@fortawesome/free-solid-svg-icons'
+import { TagsFilled } from '@ant-design/icons'
 
 export default function Tags({ tags }: { tags: string[] }) {
   return (
-    <ul className="flex flex-wrap items-center justify-start mb-2">
-      <FontAwesomeIcon icon={faTags} className="text-gray-500 mr-1" />
+    <ul className="flex flex-wrap items-center justify-start my-2">
+      <TagsFilled />
       {tags.map((tag) => (
         <li key={tag}>
           <Link href={`/tags/${tag}`}>

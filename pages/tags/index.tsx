@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTags } from '@fortawesome/free-solid-svg-icons'
+import { TagFilled } from '@ant-design/icons'
 import Container from 'components/Container'
 import { getAllTags, getSortedPostsDataByTag } from 'lib/tags'
 
@@ -18,8 +17,8 @@ export default function TagsList({ tagsData }: { tagsData: Props }) {
         {tagsData.map(({ tag, numberOfPosts }) => (
           <li key={tag}>
             <Link href={`/tags/${tag}`}>
-              <a className="text-sm md:text-base">
-                <FontAwesomeIcon icon={faTags} className="mr-1" />
+              <a className="flex text-sm md:text-base items-center">
+                <TagFilled className="mr-1" />
                 {tag} ({numberOfPosts})
               </a>
             </Link>

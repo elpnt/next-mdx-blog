@@ -13,9 +13,9 @@ export default function PostLayout({ postData }: Props) {
   return (
     <Container>
       <PostSEO postData={postData} />
-      <article className="flex flex-col justify-between items-start max-w-3xl mx-auto">
+      <article className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full">
         <PostHeader postData={postData} />
-        <div className="prose sm:prose-sm lg:prose-lg max-w-none">
+        <div className="prose sm:prose-sm lg:prose-lg max-w-none w-full">
           {content}
         </div>
       </article>

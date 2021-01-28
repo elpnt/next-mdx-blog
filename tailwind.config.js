@@ -8,6 +8,8 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
+      backgroundColor: ['checked'],
+      borderColor: ['checked'],
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -16,12 +18,11 @@ module.exports = {
               marginBottom: '0rem',
             },
             a: {
-              color: theme('colors.blue.600'),
-              textDecoration: 'none',
-            },
-            'a:hover': {
-              color: theme('colors.blue.800'),
-              textDecoration: 'underline',
+              color: theme('colors.blue.500'),
+              '&:hover': {
+                color: theme('colors.blue.700'),
+              },
+              code: { color: theme('colors.blue.400') },
             },
             'blockquote > p': {
               color: theme('colors.gray.500'),
